@@ -16,3 +16,20 @@ This led to the creation of the new messages defined in this package. This work 
  * `ComplexPolygon2D` defines a complex polygon with one polygon that is the outer perimeter, and an arbitrary number of polygons that define the holes.
  * `Polygon2DCollection` is a list of simple polygons, all with the same frame. There is also an optional per-polygon colors field for display purposes.
  * Simiarly, `ComplexPolygon2DCollection` is a list of complex polygons, also with a header, and an optional colors field.
+
+## Polygon Utils
+The `polygon_utils` package provides a number of tools for working with `polygon_msgs`.
+
+### Conversions
+Note that when converting from `geometry_msgs` to `polygon_msgs`, any information in the z coordinate is discarded.
+
+| to `polygon_msgs` | from `polygon_msgs` |
+| -- | -- |
+| `Polygon2D polygon3Dto2D(geometry_msgs::Polygon)` |`geometry_msgs::Polygon polygon2Dto3D(Polygon2D)`
+| `Polygon2DStamped polygon3Dto2D(geometry_msgs::PolygonStamped)` | `geometry_msgs::PolygonStamped polygon2Dto3D(Polygon2DStamped)`
+
+### Operations
+ * `equals` - check if two polygons are equal
+ * `movePolygonToPose` - translate and rotate a polygon
+ * `isInside` - check if a point is inside a polygon
+  * `triangulate` - Decompose a polygon into a set of non-overlapping triangles using an open source implementation of the [earcut algorithm](https://github.com/mapbox/earcut.hpp)
