@@ -1,0 +1,73 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 70
+    Name: Displays
+    Tree Height: 324
+  - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+Visualization Manager:
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Value: true
+    - Class: polygon_rviz_plugins/Polygon2D
+      Name: Polygon2D
+      Topic:
+        Value: /polygon
+      Value: true
+    - Class: polygon_rviz_plugins/ComplexPolygon
+      Name: ComplexPolygon
+      Fill Color: 255; 215; 0
+      Topic:
+        Value: /complex_polygon
+      Value: true
+    - Class: polygon_rviz_plugins/Polygons
+      Fill Color: 255; 255; 0
+      Fill Color Mode: Single Color
+      Name: Polygons
+      Outline Color: 0; 0; 0
+      Topic:
+        Value: /polygons
+      Value: true
+    - Class: rviz_default_plugins/Polygon
+      Enabled: false
+      Name: Old Style Polygon3D
+      Topic:
+        Value: /polygon3d
+      Value: false
+    - Alpha: 1
+      Class: polygon_rviz_plugins/Polygon3D
+      Fill Color: 255; 255; 255
+      Name: New Style Polygon3D
+      Outline Color: 239; 41; 41
+      Topic:
+        Value: /polygon3d
+      Value: true
+    - Class: polygon_rviz_plugins/ComplexPolygons
+      Fill Color Mode: From Message
+      Name: Complex Polygons
+      Topic:
+        Value: /complex_polygons
+      Value: true
+  Enabled: true
+  Global Options:
+    Fixed Frame: map
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 14
+      Name: Current View
+      Pitch: 0.8700000047683716
+      Value: Orbit (rviz)
+      Yaw: 1
+Window Geometry:
+  Height: 846
+  QMainWindow State: 000000ff00000000fd0000000100000000000001cb000002f4fc0200000002fb000000100044006900730070006c006100790073010000003d000001c7000000c900fffffffb0000000a00560069006500770073010000020a00000127000000a400ffffff000002df000002f400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Width: 1200
+  X: 60
+  Y: 0

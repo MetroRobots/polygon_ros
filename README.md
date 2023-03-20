@@ -1,6 +1,8 @@
 # polygon_ros
 Messages and libraries for operating on two dimensional polygons.
 
+![rviz visualization of a bunch of polygons](demo.png)
+
 In the standard package [`geometry_msgs`](https://github.com/ros2/common_interfaces/blob/rolling/geometry_msgs/msg/Polygon.msg), `Polygon.msg` and `PolygonStamped.msg` are defined, but have three primary limitations.
  * The `Polygon` is defined by `Point32` which uses `float32` limited precision to store the coordinates.
  * The point is also defined in three dimensions, leading to an often ignored Z coordinate.
@@ -33,3 +35,24 @@ Note that when converting from `geometry_msgs` to `polygon_msgs`, any informatio
  * `movePolygonToPose` - translate and rotate a polygon
  * `isInside` - check if a point is inside a polygon
   * `triangulate` - Decompose a polygon into a set of non-overlapping triangles using an open source implementation of the [earcut algorithm](https://github.com/mapbox/earcut.hpp)
+
+## RViz Plugins
+
+## Polygon Displays
+The existing [`rviz_default_plugins::PolygonDisplay`](https://github.com/ros2/rviz/blob/ros2/rviz_default_plugins/src/rviz_default_plugins/displays/polygon/polygon_display.cpp) draws only the outline of a given polygon, and cannot fill the polygon in with color. This package has five new RViz displays for polygon data:
+ * `polygon_rviz_plugins::Polygon3DDisplay` will display `geometry_msgs/PolygonStamped` messages just like `rviz_default_plugins::PolygonDisplay` except it can fill in the polygon.
+ * `polygon_rviz_plugins::PolygonDisplay` displays `polygon_msgs/Polygon2DStamped` messages
+ * `polygon_rviz_plugins::ComplexPolygonDisplay` displays `polygon_msgs/ComplexPolygon2DStamped` messages
+ * `polygon_rviz_plugins::PolygonsDisplay` (note the S in PolygonS) will display `polygon_msgs/Polygon2DCollection` messages.
+ * `polygon_rviz_plugins::ComplexPolygonsDisplay` (note the S in PolygonS) will display `polygon_msgs/ComplexPolygon2DCollection` messages.
+
+Each has three display modes, for displaying just the outline, just the filler, or both.
+
+When displaying polygon collections, you have the option to display a single color, colors from the message, or a set of "unique" colors (limited to 54 colors).
+
+The behavior is showcased by running `ros2 launch polygon_demos polygons.launch.py`. The results are also shown in the screenshot above.
+ * The blue star in the middle is a `Polygon2DStamped`
+ * The white star is a `geometry_msgs/PolygonStamped`
+ * The star burst around the white star is a `ComplexPolygon2DStamped`
+ * The ring of yellow stars is a `Polygon2DCollection`
+ * The rainbow-colored stars around the blue star are a `ComplexPolygon2DCollection`

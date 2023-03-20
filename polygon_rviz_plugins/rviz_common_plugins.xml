@@ -1,0 +1,22 @@
+<library path="polygon_rviz_plugins">
+  <class name="polygon_rviz_plugins/Polygon2D" type="polygon_rviz_plugins::PolygonDisplay" base_class_type="rviz_common::Display">
+    <message_type>polygon_msgs/msg/Polygon2DStamped</message_type>
+    <description>Display for polygon_msgs::Polygon2D</description>
+  </class>
+  <class name="polygon_rviz_plugins/Polygon3D" type="polygon_rviz_plugins::Polygon3DDisplay" base_class_type="rviz_common::Display">
+    <message_type>geometry_msgs/msg/PolygonStamped</message_type>
+    <description>Display for geometry_msgs::PolygonStamped</description>
+  </class>
+  <class name="polygon_rviz_plugins/ComplexPolygon" type="polygon_rviz_plugins::ComplexPolygonDisplay" base_class_type="rviz_common::Display">
+    <message_type>polygon_msgs/msg/ComplexPolygon2DStamped</message_type>
+    <description>Display for polygon_msgs::ComplexPolygon2D</description>
+  </class>
+  <class name="polygon_rviz_plugins/Polygons" type="polygon_rviz_plugins::PolygonsDisplay" base_class_type="rviz_common::Display">
+    <message_type>polygon_msgs/msg/Polygon2DCollection</message_type>
+    <description>Display for polygon_msgs::Polygon2DCollection</description>
+  </class>
+  <class name="polygon_rviz_plugins/ComplexPolygons" type="polygon_rviz_plugins::ComplexPolygonsDisplay" base_class_type="rviz_common::Display">
+    <message_type>polygon_msgs/msg/ComplexPolygon2DCollection</message_type>
+    <description>Display for polygon_msgs::msg::Polygon2DCollection</description>
+  </class>
+</library>

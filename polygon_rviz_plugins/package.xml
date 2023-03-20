@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>polygon_rviz_plugins</name>
+  <version>0.0.0</version>
+  <description>RViz visualizations for polygons</description>
+  <maintainer email="davidvlu@gmail.com">David V. Lu!!</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>color_util</depend>
+  <depend>geometry_msgs</depend>
+  <depend>pluginlib</depend>
+  <depend>polygon_msgs</depend>
+  <depend>polygon_utils</depend>
+  <depend>rviz_common</depend>
+  <depend>std_msgs</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
