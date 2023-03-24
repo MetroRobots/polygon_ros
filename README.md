@@ -38,7 +38,6 @@ Note that when converting from `geometry_msgs` to `polygon_msgs`, any informatio
 
 ## RViz Plugins
 
-## Polygon Displays
 The existing [`rviz_default_plugins::PolygonDisplay`](https://github.com/ros2/rviz/blob/ros2/rviz_default_plugins/src/rviz_default_plugins/displays/polygon/polygon_display.cpp) draws only the outline of a given polygon, and cannot fill the polygon in with color. This package has five new RViz displays for polygon data:
  * `polygon_rviz_plugins::Polygon3DDisplay` will display `geometry_msgs/PolygonStamped` messages just like `rviz_default_plugins::PolygonDisplay` except it can fill in the polygon.
  * `polygon_rviz_plugins::PolygonDisplay` displays `polygon_msgs/Polygon2DStamped` messages
