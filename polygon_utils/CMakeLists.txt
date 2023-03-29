@@ -16,6 +16,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(polygon_msgs REQUIRED)
 
 add_library(polygon_utils src/polygon_utils.cpp)
@@ -25,6 +26,7 @@ target_include_directories(polygon_utils PUBLIC
 )
 ament_target_dependencies(polygon_utils
   polygon_msgs
+  geometry_msgs
 )
 
 install(TARGETS polygon_utils
