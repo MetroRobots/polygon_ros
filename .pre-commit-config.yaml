@@ -24,4 +24,5 @@ repos:
   hooks:
   - id: clang-format
   rev: v16.0.4
-autoupdate_schedule: quarterly
+ci:
+  autoupdate_schedule: quarterly
