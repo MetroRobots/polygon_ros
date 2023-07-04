@@ -19,10 +19,10 @@ repos:
   - id: codespell
     args:
     - --write-changes
-  rev: v2.2.4
+  rev: v2.2.5
 - repo: https://github.com/pre-commit/mirrors-clang-format
   hooks:
   - id: clang-format
-  rev: v16.0.4
+  rev: v16.0.6
 ci:
   autoupdate_schedule: quarterly
