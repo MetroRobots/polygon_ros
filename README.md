@@ -36,6 +36,11 @@ Note that when converting from `geometry_msgs` to `polygon_msgs`, any informatio
  * `isInside` - check if a point is inside a polygon
   * `triangulate` - Decompose a polygon into a set of non-overlapping triangles using an open source implementation of the [earcut algorithm](https://github.com/mapbox/earcut.hpp)
 
+### Python
+There are also a few Python-based utility operations available.
+ * `polygon_utils.shapely_lib.py` provides conversions from ROS messages to [Shapely](https://shapely.readthedocs.io/en/stable/manual.html) objects, enabling a large library of algorithms to be run. **Note: Requires `shapely` to be installed via `pip`.**
+ * `polygon_utils.shortest_path.py` provides methods for determining the shortest path around a collection of polygons. (also uses `shapely_lib`)
+
 ## RViz Plugins
 
 The existing [`rviz_default_plugins::PolygonDisplay`](https://github.com/ros2/rviz/blob/ros2/rviz_default_plugins/src/rviz_default_plugins/displays/polygon/polygon_display.cpp) draws only the outline of a given polygon, and cannot fill the polygon in with color. This package has five new RViz displays for polygon data:
