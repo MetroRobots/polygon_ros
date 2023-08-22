@@ -8,8 +8,10 @@
   <license>BSD</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
   <depend>geometry_msgs</depend>
   <depend>polygon_msgs</depend>
+  <depend>python3-shapely</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
