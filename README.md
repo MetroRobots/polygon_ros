@@ -17,7 +17,7 @@ This led to the creation of the new messages defined in this package. This work 
  * `Polygon2DStamped` is a single simple polygon with a header.
  * `ComplexPolygon2D` defines a complex polygon with one polygon that is the outer perimeter, and an arbitrary number of polygons that define the holes.
  * `Polygon2DCollection` is a list of simple polygons, all with the same frame. There is also an optional per-polygon colors field for display purposes.
- * Simiarly, `ComplexPolygon2DCollection` is a list of complex polygons, also with a header, and an optional colors field.
+ * Similarly, `ComplexPolygon2DCollection` is a list of complex polygons, also with a header, and an optional colors field.
 
 ## Polygon Utils
 The `polygon_utils` package provides a number of tools for working with `polygon_msgs`.
