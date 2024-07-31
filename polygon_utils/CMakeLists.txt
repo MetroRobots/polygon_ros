@@ -30,6 +30,15 @@ ament_target_dependencies(polygon_utils
   geometry_msgs
 )
 
+if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(short_path test/test_shortest_path.py
+    APPEND_ENV PYTHONPATH=${CMAKE_CURRENT_BINARY_DIR}
+    TIMEOUT 5
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+  )
+endif()
+
 install(TARGETS polygon_utils
         EXPORT export_polygon_utils
         ARCHIVE DESTINATION lib
