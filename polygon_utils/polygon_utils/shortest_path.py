@@ -1,5 +1,6 @@
 from .shapely_lib import polygon_from_msg, point_from_msg, point_to_msg
-from shapely.geometry import MultiPolygon, LineString, Point
+from shapely.geometry import LineString, Point
+from shapely.ops import unary_union
 import heapq
 
 
@@ -15,7 +16,8 @@ class VisGraph:
             for ring in rings:
                 for pt in ring.coords:
                     self.vertices.add(pt)
-        self.mp = MultiPolygon(polygons)
+        # Use unary_union instead of MultiPolygon to merge overlapping polygons
+        self.mp = unary_union(polygons)
 
         for v0 in self.vertices:
             self.visibility[v0] = {}
