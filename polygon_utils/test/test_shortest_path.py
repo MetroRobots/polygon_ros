@@ -3,6 +3,18 @@ from polygon_utils.shortest_path import shortest_path
 from polygon_msgs.msg import Polygon2D, Polygon2DCollection
 
 
+def test_direct():
+    polys = Polygon2DCollection()
+
+    start = make_point(-3.0, -3.0)
+    goal = make_point(3.0, 3.0)
+
+    shortest = shortest_path(polys, start, goal)
+    assert len(shortest) == 2
+    assert shortest[0] == start
+    assert shortest[-1] == goal
+
+
 def test_basic():
     triangle = Polygon2D()
     triangle.points.append(make_point(-2.0, 0.0))
