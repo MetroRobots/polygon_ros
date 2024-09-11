@@ -32,7 +32,7 @@ class VisGraph:
     def shortest_path(self, start, goal):
         direct = LineString([start, goal])
         if not self.mp.crosses(direct):
-            return direct
+            return [Point(*p) for p in direct.coords]
         start_t = start.x, start.y
         goal_t = goal.x, goal.y
 
