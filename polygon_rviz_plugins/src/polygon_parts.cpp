@@ -86,7 +86,8 @@ void PolygonOutline::setPolygon(const polygon_msgs::msg::Polygon2D& polygon, con
     manual_object_->position(msg_point.x, msg_point.y, z_offset);
     manual_object_->colour(color);
   }
-  if (implicit_closed) {
+  if (implicit_closed)
+  {
     manual_object_->position(polygon.points.front().x, polygon.points.front().y, z_offset);
     manual_object_->colour(color);
   }
