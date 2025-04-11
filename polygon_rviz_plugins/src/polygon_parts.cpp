@@ -78,11 +78,17 @@ void PolygonOutline::reset()
 void PolygonOutline::setPolygon(const polygon_msgs::msg::Polygon2D& polygon, const Ogre::ColourValue& color,
                                 double z_offset)
 {
-  manual_object_->estimateVertexCount(polygon.points.size());
+  bool implicit_closed = !polygon.points.empty() && polygon.points.front() != polygon.points.back();
+  manual_object_->estimateVertexCount(polygon.points.size() + (implicit_closed ? 1 : 0));
   manual_object_->begin("BaseWhiteNoLighting", Ogre::RenderOperation::OT_LINE_STRIP);
   for (const polygon_msgs::msg::Point2D& msg_point : polygon.points)
   {
     manual_object_->position(msg_point.x, msg_point.y, z_offset);
+    manual_object_->colour(color);
+  }
+  if (implicit_closed)
+  {
+    manual_object_->position(polygon.points.front().x, polygon.points.front().y, z_offset);
     manual_object_->colour(color);
   }
   manual_object_->end();
