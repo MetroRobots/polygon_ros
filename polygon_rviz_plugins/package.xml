@@ -7,7 +7,7 @@
   <maintainer email="davidvlu@gmail.com">David V. Lu!!</maintainer>
   <license>BSD</license>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
   <depend>color_util</depend>
   <depend>geometry_msgs</depend>
   <depend>pluginlib</depend>
