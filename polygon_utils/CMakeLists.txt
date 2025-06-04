@@ -25,9 +25,9 @@ target_include_directories(polygon_utils PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
-ament_target_dependencies(polygon_utils
-  polygon_msgs
-  geometry_msgs
+target_link_libraries(polygon_utils PUBLIC
+  ${polygon_msgs_TARGETS}
+  ${geometry_msgs_TARGETS}
 )
 
 if(BUILD_TESTING)

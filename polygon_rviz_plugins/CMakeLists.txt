@@ -49,14 +49,14 @@ target_include_directories(polygon_rviz_plugins PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
-ament_target_dependencies(polygon_rviz_plugins
-  pluginlib
-  polygon_msgs
-  polygon_utils
-  rviz_common
-  geometry_msgs
-  std_msgs
-  color_util
+target_link_libraries(polygon_rviz_plugins PUBLIC
+  pluginlib::pluginlib
+  ${polygon_msgs_TARGETS}
+  polygon_utils::polygon_utils
+  rviz_common::rviz_common
+  ${geometry_msgs_TARGETS}
+  ${std_msgs_TARGETS}
+  color_util::color_util
 )
 
 install(DIRECTORY include/
