@@ -27,13 +27,13 @@ add_executable(demo src/polygon_demo.cpp)
 target_include_directories(demo PUBLIC
   $<INSTALL_INTERFACE:include>
 )
-ament_target_dependencies(demo
-  angles
-  geometry_msgs
-  polygon_msgs
-  polygon_utils
-  rclcpp
-  color_util
+target_link_libraries(demo PUBLIC
+  angles::angles
+  ${geometry_msgs_TARGETS}
+  ${polygon_msgs_TARGETS}
+  polygon_utils::polygon_utils
+  rclcpp::rclcpp
+  color_util::color_util
 )
 install(TARGETS demo
         DESTINATION lib/${PROJECT_NAME}
