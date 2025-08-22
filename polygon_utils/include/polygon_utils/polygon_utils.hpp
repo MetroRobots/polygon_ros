@@ -39,11 +39,11 @@
 
 #include <geometry_msgs/msg/polygon_stamped.hpp>
 #include <geometry_msgs/msg/polygon.hpp>
-#include <geometry_msgs/msg/pose2_d.hpp>
 #include <polygon_msgs/msg/point2_d.hpp>
 #include <polygon_msgs/msg/polygon2_d.hpp>
 #include <polygon_msgs/msg/polygon2_d_stamped.hpp>
 #include <polygon_msgs/msg/complex_polygon2_d.hpp>
+#include <polygon_msgs/msg/pose2_d.hpp>
 #include <vector>
 
 namespace polygon_utils
@@ -71,7 +71,7 @@ bool equals(const polygon_msgs::msg::ComplexPolygon2D& polygon0, const polygon_m
  * @return A new moved polygon
  */
 polygon_msgs::msg::Polygon2D movePolygonToPose(const polygon_msgs::msg::Polygon2D& polygon,
-                                               const geometry_msgs::msg::Pose2D& pose);
+                                               const polygon_msgs::msg::Pose2D& pose);
 
 /**
  * @brief Translate and rotate a polygon to a new pose
@@ -80,7 +80,7 @@ polygon_msgs::msg::Polygon2D movePolygonToPose(const polygon_msgs::msg::Polygon2
  * @return A new moved polygon
  */
 polygon_msgs::msg::ComplexPolygon2D movePolygonToPose(const polygon_msgs::msg::ComplexPolygon2D& polygon,
-                                                      const geometry_msgs::msg::Pose2D& pose);
+                                                      const polygon_msgs::msg::Pose2D& pose);
 
 /**
  * @brief Check if a given point is inside of a polygon

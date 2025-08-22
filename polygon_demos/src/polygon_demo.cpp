@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 
     for (unsigned int i = 0; i < CIRCLE_STARS; i++)
     {
-      geometry_msgs::msg::Pose2D circle_pose;
+      polygon_msgs::msg::Pose2D circle_pose;
       double angle = rad + circle_angle * i;
       circle_pose.x = 6.0 * cos(angle);
       circle_pose.y = 6.0 * sin(angle);
@@ -139,7 +139,7 @@ int main(int argc, char** argv)
     pub1->publish(polygons);
     pub3->publish(complex_polygons);
 
-    geometry_msgs::msg::Pose2D pose;
+    polygon_msgs::msg::Pose2D pose;
     pose.x = 5.0 * cos(rad);
     pose.y = 5.0 * sin(rad);
 

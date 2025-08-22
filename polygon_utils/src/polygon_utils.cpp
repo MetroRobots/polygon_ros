@@ -131,7 +131,7 @@ bool equals(const polygon_msgs::msg::ComplexPolygon2D& polygon0, const polygon_m
 }
 
 polygon_msgs::msg::Polygon2D movePolygonToPose(const polygon_msgs::msg::Polygon2D& polygon,
-                                               const geometry_msgs::msg::Pose2D& pose)
+                                               const polygon_msgs::msg::Pose2D& pose)
 {
   polygon_msgs::msg::Polygon2D new_polygon;
   new_polygon.points.resize(polygon.points.size());
@@ -147,7 +147,7 @@ polygon_msgs::msg::Polygon2D movePolygonToPose(const polygon_msgs::msg::Polygon2
 }
 
 polygon_msgs::msg::ComplexPolygon2D movePolygonToPose(const polygon_msgs::msg::ComplexPolygon2D& polygon,
-                                                      const geometry_msgs::msg::Pose2D& pose)
+                                                      const polygon_msgs::msg::Pose2D& pose)
 {
   polygon_msgs::msg::ComplexPolygon2D new_polygon;
   new_polygon.outer = movePolygonToPose(polygon.outer, pose);
