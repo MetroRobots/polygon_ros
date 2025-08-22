@@ -26,6 +26,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     msg/Polygon2D.msg
     msg/Polygon2DCollection.msg
     msg/Polygon2DStamped.msg
+    msg/Pose2D.msg
   DEPENDENCIES
     std_msgs
 )
