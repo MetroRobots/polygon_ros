@@ -22,11 +22,11 @@ repos:
   - id: codespell
     args:
     - --write-changes
-  rev: v2.4.1
+  rev: v2.4.2
 - repo: https://github.com/pre-commit/mirrors-clang-format
   hooks:
   - id: clang-format
-  rev: v21.1.2
+  rev: v22.1.5
 - repo: https://github.com/hhatto/autopep8
   hooks:
   - id: autopep8
